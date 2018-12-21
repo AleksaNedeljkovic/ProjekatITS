@@ -1,0 +1,108 @@
+﻿@model Projektni_centar_proba.Models.Obrasac
+<style>
+    .button {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: solid 1px #20538D;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        background: #4479BA;
+        color: #FFF;
+        padding: 8px 12px;
+        text-decoration: none;
+    }
+</style>
+@using (Html.BeginForm("SetDataInDataBaseO", "RegisterO", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="form-group">
+            <label>Pun naziv škole:</label>
+            <input class="form-control" name="NazivSkole" placeholder="Upišite naziv skole" />
+        </div>
+        <div class="form-group">
+            <label>Adresa registracije škole:</label>
+            <input class="form-control" name="AdresaReg" placeholder="Upišite adresu" />
+        </div>
+        <div class="form-group">
+            <label>Opština:</label>
+            <input class="form-control" name="Opstina" placeholder="Upišite opštinu" />
+        </div>
+        <div class="form-group">
+            <label>Poštanski broj:</label>
+            <input class="form-control" name="PostaBr" placeholder="Upišite poštanski broj" />
+        </div>
+        <div class="form-group">
+            <label>Matični broj škole:</label>
+            <input class="form-control" name="MatBrSkole" placeholder="Upišite matični broj škole" />
+        </div>
+        <div class="form-group">
+            <label>PIB:</label>
+            <input class="form-control" name="PIB" placeholder="Upišite PIB" />
+        </div>
+        <div class="form-group">
+            <label>Broj računa škole:</label>
+            <input class="form-control" name="BrojRacuna" placeholder="Upišite broj računa škole" />
+        </div>
+        <div class="form-group">
+            <label>Web stranica škole:</label>
+            <input class="form-control" name="Web" placeholder="Upišite web stranicu škole" />
+        </div>
+        <h3>Kontakt osoba</h3>
+        <div class="form-group">
+            <label>Ime:</label>
+            <input class="form-control" name="Ime" placeholder="Upišite ime" />
+        </div>
+        <div class="form-group">
+            <label>Prezime:</label>
+            <input class="form-control" name="Prezime" placeholder="Upišite prezime" />
+        </div>
+        <div class="form-group">
+            <label>Radno mesto:</label>
+            <input class="form-control" name="RadnoMes" placeholder="Upišite radno mesto" />
+        </div>
+        <div class="form-group">
+            <label>Vrsta telefona (kancelarijski,službeni,mobilni...):</label>
+            <input class="form-control" name="VrstaTel" placeholder="Upišite vrstu telefona" />
+        </div>
+        <div class="form-group">
+            <label>Broj telefona:</label>
+            <input class="form-control" name="BrTel" placeholder="Upišite broj telefona" />
+        </div>
+        <div class="form-group">
+            <label>Lokal:</label>
+            <input class="form-control" name="Lokal" placeholder="Upišite lokal" />
+        </div>
+        <div class="form-group">
+            <label>Vrsta emaila (posao,privatni...):</label>
+            <input class="form-control" name="VrstaEmail" placeholder="Upišite vrstu emaila" />
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input class="form-control" name="Email" placeholder="Upišite email" />
+        </div>
+        <div class="form-group">
+            <label>Beleške:</label>
+            <input class="form-control" name="Beleske" placeholder="Upišite beleške" />
+        </div>
+
+
+        <div class="form-group">
+            <label>Fotografija pečata škole</label>
+            <input type="file" id="image1" name="image1" />
+        </div>
+
+
+        
+            <button class="button">Sačuvaj</button>
+            <a href="/Register/AfterLogin" class="button">Nazad</a>
+       
+    </div>
+
+}
+
+
+
+

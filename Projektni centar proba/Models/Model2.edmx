@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BazaModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Obrasac">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NazivSkole" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdresaReg" Type="nvarchar" MaxLength="50" />
+          <Property Name="Opstina" Type="nvarchar" MaxLength="20" />
+          <Property Name="PostaBr" Type="int" />
+          <Property Name="MatBrSkole" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="PIB" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="BrojRacuna" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Web" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ime" Type="nvarchar" MaxLength="50" />
+          <Property Name="Prezime" Type="nvarchar" MaxLength="50" />
+          <Property Name="RadnoMes" Type="nvarchar" MaxLength="50" />
+          <Property Name="VrstaTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="BrTel" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Lokal" Type="int" />
+          <Property Name="VrstaEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="FotoPecat" Type="image" />
+          <Property Name="Beleske" Type="nvarchar(max)" />
+          <Property Name="KorisnikTip" Type="nvarchar" MaxLength="50" />
+          <Property Name="Korisnik" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserEmail" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="BazaModel2StoreContainer">
+          <EntitySet Name="Obrasac" EntityType="Self.Obrasac" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BazaModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Obrasac">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NazivSkole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdresaReg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Opstina" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PostaBr" Type="Int32" />
+          <Property Name="MatBrSkole" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PIB" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="BrojRacuna" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Web" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RadnoMes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VrstaTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BrTel" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Lokal" Type="Int32" />
+          <Property Name="VrstaEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FotoPecat" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Beleske" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KorisnikTip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Korisnik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="BazaEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Obrasacs" EntityType="Self.Obrasac" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BazaModel2StoreContainer" CdmEntityContainer="BazaEntities1">
+          <EntitySetMapping Name="Obrasacs">
+            <EntityTypeMapping TypeName="BazaModel2.Obrasac">
+              <MappingFragment StoreEntitySet="Obrasac">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NazivSkole" ColumnName="NazivSkole" />
+                <ScalarProperty Name="AdresaReg" ColumnName="AdresaReg" />
+                <ScalarProperty Name="Opstina" ColumnName="Opstina" />
+                <ScalarProperty Name="PostaBr" ColumnName="PostaBr" />
+                <ScalarProperty Name="MatBrSkole" ColumnName="MatBrSkole" />
+                <ScalarProperty Name="PIB" ColumnName="PIB" />
+                <ScalarProperty Name="BrojRacuna" ColumnName="BrojRacuna" />
+                <ScalarProperty Name="Web" ColumnName="Web" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="RadnoMes" ColumnName="RadnoMes" />
+                <ScalarProperty Name="VrstaTel" ColumnName="VrstaTel" />
+                <ScalarProperty Name="BrTel" ColumnName="BrTel" />
+                <ScalarProperty Name="Lokal" ColumnName="Lokal" />
+                <ScalarProperty Name="VrstaEmail" ColumnName="VrstaEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FotoPecat" ColumnName="FotoPecat" />
+                <ScalarProperty Name="Beleske" ColumnName="Beleske" />
+                <ScalarProperty Name="KorisnikTip" ColumnName="KorisnikTip" />
+                <ScalarProperty Name="Korisnik" ColumnName="Korisnik" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

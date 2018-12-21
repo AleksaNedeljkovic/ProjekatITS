@@ -1,0 +1,118 @@
+﻿@model List<Projektni_centar_proba.Models.Obrasac>
+
+<style>
+    .button {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: solid 1px #20538D;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        background: #4479BA;
+        color: #FFF;
+        padding: 8px 12px;
+        text-decoration: none;
+    }
+
+    .container {
+        border-radius: 4px;
+        margin: auto;
+        width: 80%;
+        border: 3px solid black;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    th {
+        background-color: blue;
+        color: white;
+        margin: auto;
+        text-align: center;
+    }
+
+    tr {
+        font-weight: bold;
+        background-color: white;
+        color: blue;
+        text-align: center;
+    }
+</style>
+
+<div class="container" style="overflow-x:auto">
+    <table class="table table-bordered" >
+        <thead>
+            <tr>
+                <th>Korisnik</th>
+                <th>ID</th>
+                <th>Pun naziv škole</th>
+                <th>Adresa registracije škole</th>
+                <th>Opština</th>
+                <th>Poštanski broj</th>
+                <th>Matični broj</th>
+                <th>PIB</th>
+                <th>Broj računa</th>
+                <th>Web stranica škole</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Radno mesto</th>
+                <th>Vrsta telefona</th>
+                <th>Broj telefona</th>
+                <th>Lokal</th>
+                <th>Vrsta emaila</th>
+                <th>Email</th>
+                <th>Beleške</th>
+                <th>Fotografija pečata</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count(); i++)
+            {
+                <tr>
+                    <td>@Model[i].Korisnik</td>
+                    <td>@Model[i].ID</td>
+                    <td>@Model[i].NazivSkole</td>
+                    <td>@Model[i].AdresaReg</td>
+                    <td>@Model[i].Opstina</td>
+                    <td>@Model[i].PostaBr</td>
+                    <td>@Model[i].MatBrSkole</td>
+                    <td>@Model[i].PIB</td>
+                    <td>@Model[i].BrojRacuna</td>
+                    <td>@Model[i].Web</td>
+                    <td>@Model[i].Ime</td>
+                    <td>@Model[i].Prezime</td>
+                    <td>@Model[i].RadnoMes</td>
+                    <td>@Model[i].VrstaTel</td>
+                    <td>@Model[i].BrTel</td>
+                    <td>@Model[i].Lokal</td>
+                    <td>@Model[i].VrstaEmail</td>
+                    <td>@Model[i].Email</td>
+                    <td>@Model[i].Beleske</td>
+                    <td>
+                        @if (Model[i].FotoPecat != null)
+                    {
+                        var base64 = Convert.ToBase64String(Model[i].FotoPecat);
+                        var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                        <img src='@imgsrc' style="max-width:100px" ;max-height:100px" />
+                    }
+
+                    else
+                    {
+                        <p>Nema slike</p>
+                    }
+                </td>
+
+                    <td>
+                        <a href="@Url.Action("EditOP", new { id = Model[i].ID })"><i class="glyphicon glyphicon-edit"></i></a>
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <a href="/Register/AfterLogin" class="button">Nazad</a>
+</div>
+
